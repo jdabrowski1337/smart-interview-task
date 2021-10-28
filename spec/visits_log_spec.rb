@@ -28,7 +28,7 @@ describe VisitsLog do
       subject { VisitsLog.new('fixtures/file-that-does-not-exist.log') }
 
       it 'should raise WebsitesLogError' do
-        expect{subject}.to raise_error WebsitesLogError
+        expect{subject}.to raise_error VisitsLogError
       end
     end
   end
@@ -54,7 +54,7 @@ describe VisitsLog do
     describe '#websites' do
       subject { visits_log.websites }
 
-      it 'returns a list of all unique website paths' do
+      it 'should return a list of all unique website paths' do
         expect(subject).to match_array %w[path1 path2]
       end
     end
@@ -69,11 +69,11 @@ describe VisitsLog do
     describe '#most_unique_visits' do
       subject { visits_log.most_unique_visits }
 
-      it 'should return an entry for each logged website' do
+      it 'should return an entry for each logged website path' do
         expect(subject.size).to eq 2
       end
 
-      it 'should return the website with most unique visits first' do
+      it 'should return the website path with most unique visits first' do
         expect(subject[0][:path]).to eq 'path1'
       end
     end
@@ -81,11 +81,11 @@ describe VisitsLog do
     describe '#most_visits' do
       subject { visits_log.most_visits }
 
-      it 'should return an entry for each logged website' do
+      it 'should return an entry for each logged website path' do
         expect(subject.size).to eq 2
       end
 
-      it 'should return the website with most visits first' do
+      it 'should return the website path with most visits first' do
         expect(subject[0][:path]).to eq 'path2'
       end
 

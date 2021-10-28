@@ -24,7 +24,7 @@ class App
       puts format('%-30.30s', "Path: #{website[:path]}") +
         " Unique visits: #{website[:unique_visits]}"
     end
-  rescue WebsitesLogError => e
+  rescue VisitsLogError => e
     puts e.message
   end
 end

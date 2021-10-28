@@ -47,7 +47,7 @@ class VisitsLog
       end
     end
   rescue StandardError => e
-    raise WebsitesLogError,
+    raise VisitsLogError,
           "An error occurred when reading input file.\n" \
              "Input file: #{input_file_path}\n" \
              "Error: #{e.class.name} #{e.message}\n"
@@ -62,4 +62,4 @@ class VisitsLog
   end
 end
 
-class WebsitesLogError < StandardError; end
+class VisitsLogError < StandardError; end
