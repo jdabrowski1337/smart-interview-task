@@ -1,0 +1,10 @@
+====================================================
+A ruby script to calculate website visit statistics.
+====================================================
+
+Usage:
+ruby stats.rb <log_file>
+
+    log_file        A file with each line representing a single website visit in format: "<website_path> <ip_address>"
+
+created by Jakub Dąbrowski @ 28/10/2021
